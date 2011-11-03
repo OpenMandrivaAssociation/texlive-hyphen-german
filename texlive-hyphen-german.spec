@@ -1,5 +1,11 @@
+# revision 23085
+# category TLCore
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-hyphen-german
-Version:	20111102
+Version:	20111103
 Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
@@ -63,6 +69,7 @@ patterns for written Schwyzerduetsch.
 %_texmf_language_dat_d/hyphen-german
 %_texmf_language_def_d/hyphen-german
 %_texmf_language_lua_d/hyphen-german
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -73,6 +80,8 @@ patterns for written Schwyzerduetsch.
 %install
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-german <<EOF
 %% from hyphen-german:
