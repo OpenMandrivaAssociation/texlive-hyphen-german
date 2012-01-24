@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-german
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -60,18 +60,20 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-german <<EOF
-\%\% from hyphen-german:
+\%% from hyphen-german:
 german loadhyph-de-1901.tex
 ngerman loadhyph-de-1996.tex
 swissgerman loadhyph-de-ch-1901.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-german
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-german <<EOF
-\%\% from hyphen-german:
+\%% from hyphen-german:
 \addlanguage{german}{loadhyph-de-1901.tex}{}{2}{2}
 \addlanguage{ngerman}{loadhyph-de-1996.tex}{}{2}{2}
 \addlanguage{swissgerman}{loadhyph-de-ch-1901.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-german
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-german <<EOF
 -- from hyphen-german:
