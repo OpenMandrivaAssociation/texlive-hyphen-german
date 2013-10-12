@@ -1,11 +1,11 @@
-# revision 23085
+# revision 29725
 # category TLCore
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-german
-Version:	20120124
+Version:	20131012
 Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
@@ -41,10 +41,10 @@ patterns for written Schwyzerduetsch.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdir}/tex/generic/hyphen/dehyphn.tex
-%{_texmfdir}/tex/generic/hyphen/dehypht.tex
-%{_texmfdir}/tex/generic/hyphen/dehyphtex.tex
-%{_texmfdir}/tex/generic/hyphen/ghyphen.README
+%{_texmfdistdir}/tex/generic/hyphen/dehyphn.tex
+%{_texmfdistdir}/tex/generic/hyphen/dehypht.tex
+%{_texmfdistdir}/tex/generic/hyphen/dehyphtex.tex
+%{_texmfdistdir}/tex/generic/hyphen/ghyphen.README
 %_texmf_language_dat_d/hyphen-german
 %_texmf_language_def_d/hyphen-german
 %_texmf_language_lua_d/hyphen-german
@@ -56,8 +56,8 @@ patterns for written Schwyzerduetsch.
 %build
 
 %install
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-german <<EOF
 \%% from hyphen-german:
@@ -102,21 +102,3 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-german <<EOF
 		hyphenation = '',
 	},
 EOF
-
-
-%changelog
-* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120124-1
-+ Revision: 767553
-- Add workaround to rpm bug that broke hyphenation files
-
-* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111103-2
-+ Revision: 759915
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111103-1
-+ Revision: 718657
-- texlive-hyphen-german
-- texlive-hyphen-german
-- texlive-hyphen-german
-- texlive-hyphen-german
-
