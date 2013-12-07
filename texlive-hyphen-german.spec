@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-german
 Version:	20131012
-Release:	1
+Release:	2
 Summary:	German hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
