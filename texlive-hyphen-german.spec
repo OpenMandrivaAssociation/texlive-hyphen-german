@@ -1,12 +1,6 @@
-# revision 29725
-# category TLCore
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-hyphen-german
-Version:	20131012
-Release:	9
+Version:	20170519
+Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -45,6 +39,10 @@ patterns for written Schwyzerduetsch.
 %{_texmfdistdir}/tex/generic/hyphen/dehypht.tex
 %{_texmfdistdir}/tex/generic/hyphen/dehyphtex.tex
 %{_texmfdistdir}/tex/generic/hyphen/ghyphen.README
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/ptex/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/tex/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/txt/*
 %_texmf_language_dat_d/hyphen-german
 %_texmf_language_def_d/hyphen-german
 %_texmf_language_lua_d/hyphen-german
