@@ -1,5 +1,5 @@
 Name:		texlive-hyphen-german
-Version:	20170519
+Version:	20180409
 Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
