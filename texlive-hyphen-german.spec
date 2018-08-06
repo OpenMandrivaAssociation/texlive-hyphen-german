@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-german
 Version:	20180409
-Release:	1
+Release:	2
 Summary:	German hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -35,6 +35,8 @@ patterns for written Schwyzerduetsch.
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
 %{_texmfdistdir}/tex/generic/hyphen/dehyphn.tex
 %{_texmfdistdir}/tex/generic/hyphen/dehypht.tex
 %{_texmfdistdir}/tex/generic/hyphen/dehyphtex.tex
@@ -54,6 +56,9 @@ patterns for written Schwyzerduetsch.
 %build
 
 %install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
+
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex %{buildroot}%{_texmfdistdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
