@@ -1,11 +1,11 @@
 Name:		texlive-hyphen-german
-Version:	20180409
-Release:	3
+Version:	59807
+Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-german.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-german.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,32 +26,24 @@ spoken in Switzerland (Schwyzerduetsch). There are no known
 patterns for written Schwyzerduetsch.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
 %{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
 %{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
-%{_texmfdistdir}/tex/generic/hyphen/dehyphn.tex
-%{_texmfdistdir}/tex/generic/hyphen/dehypht.tex
-%{_texmfdistdir}/tex/generic/hyphen/dehyphtex.tex
-%{_texmfdistdir}/tex/generic/hyphen/ghyphen.README
-%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
-%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/ptex/*
-%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/tex/*
-%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/txt/*
 %_texmf_language_dat_d/hyphen-german
 %_texmf_language_def_d/hyphen-german
 %_texmf_language_lua_d/hyphen-german
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%autosetup -p1 -c
 
 %build
 
