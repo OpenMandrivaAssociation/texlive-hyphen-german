@@ -3,7 +3,7 @@ Version:	59807
 Release:	2
 Summary:	German hyphenation patterns
 Group:		Publishing
-URL:		http://tug.org/texlive
+URL:		https://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-german.r%{version}.tar.xz
 BuildArch:	noarch
