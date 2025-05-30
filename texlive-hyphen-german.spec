@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-german
-Version:	59807
-Release:	2
+Version:	74203
+Release:	1
 Summary:	German hyphenation patterns
 Group:		Publishing
 URL:		https://tug.org/texlive
