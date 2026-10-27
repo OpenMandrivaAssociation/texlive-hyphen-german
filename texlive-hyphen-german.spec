@@ -3,7 +3,7 @@
 
 Name:		texlive-%{tl_name}
 Version:	%{tl_revision}
-Release:	1
+Release:	2
 Summary:	German hyphenation patterns.
 Group:		Publishing
 URL:		https://www.ctan.org/pkg/hyphen-german
